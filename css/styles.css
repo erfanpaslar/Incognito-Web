@@ -1,0 +1,479 @@
+:root {
+  --sliderColor: #999;
+  --sliderLightBg: #444;
+  --sliderDarkBg: #eee;
+}
+html {
+  font-family: "Vazir", sans-serif;
+}
+body {
+  /* Dark */
+  --bg: #222;
+  --color: #eee;
+  --btnBg: #aaa;
+  --btnHover: #eee;
+  --fontColor: var(--color);
+  /* textAria */
+  --textAriaBg: #333;
+  --textAria: var(--color);
+  --textAreaFocused: #444;
+  /* Comments */
+  --h1Color: var(--color);
+  --commentBg: #444;
+  --comment: var(--color);
+  /*  */
+  --boxShadow: rgba(63, 63, 63, 0.14);
+  --boxShadow2: rgba(69, 69, 69, 0.167);
+  /*  */
+  --scroll: var(--bg);
+  --scrollBg: #61616188;
+  /*  */
+  --unapproved: #fc3a52;
+}
+
+body.light {
+  /* Light */
+  --bg: #ddd;
+  --color: #222;
+  --btnBg: #eee;
+  --btnHover: rgb(249, 249, 249);
+  --fontColor: var(--color);
+  /* textAria */
+  --textAriaBg: #ccc;
+  --textAria: var(--color);
+  --textAreaFocused: #eee;
+  /* Comments */
+  --h1Color: var(--color);
+  --commentBg: #eee;
+  --comment: var(--color);
+  /*  */
+  --boxShadow: rgba(0, 0, 0, 0.16);
+  --boxShadow2: rgba(0, 0, 0, 0.085);
+  /*  */
+  --scroll: var(--bg);
+  --scrollBg: #999;
+  /*  */
+  --unapproved: #fc3a52;
+  transition-duration: 0.6s;
+}
+
+body {
+  font-size: 62.5%;
+  background: var(--bg);
+  color: var(--fontColor);
+  margin: 0;
+  font-family: "Vazir", sans-serif;
+  transition-duration: 1s;
+}
+
+.preview {
+  display: flex;
+  height: 50vh;
+  font-family: "Vazir Code", monospace;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 2rem;
+  margin-top: 5vh;
+}
+
+@media screen and (min-width: 768px) {
+  .preview {
+    font-size: 3rem;
+    height: 70vh;
+    margin-top: 0;
+  }
+}
+/* Btn */
+.btn {
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  font-family: "Vazir", sans-serif;
+  width: 80%;
+  height: 10vh;
+  min-height: 4rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: var(--btnBg);
+  transition-duration: 1s;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--btnHover);
+  transition-duration: 0.5s;
+}
+.btn-container {
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 70%;
+  }
+  button.btn-alone {
+    width: 65%;
+  }
+  .btn-right {
+    float: left;
+    margin-left: 1rem;
+  }
+  .btn-left {
+    float: right;
+    margin-right: 1rem;
+  }
+}
+
+/* input */
+input.theInp {
+  margin-bottom: 1rem;
+  width: 80%;
+}
+.inp {
+  font-family: "Vazir", sans-serif;
+  width: 80%;
+  height: 9vh;
+  min-height: 4rem;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: var(--textAriaBg);
+  color: var(--textAria);
+  transition: background 0.5s;
+}
+.inp:focus {
+  background: var(--textAreaFocused);
+  transition: background 0.5s;
+}
+.bigInput {
+  width: 80%;
+  font-size: 1rem;
+}
+
+.textArea {
+  max-width: 80%;
+  min-width: 80%;
+  height: 40vh;
+  min-height: 10vh;
+  margin-bottom: 0.1rem;
+}
+.textArea:focus {
+  background: var(--textAreaFocused);
+}
+.someMargin {
+  margin-top: 10vh;
+}
+@media screen and (min-width: 768px) {
+  .textArea {
+    width: 65%;
+    max-width: 65%;
+    min-width: 65%;
+    height: 40vh;
+  }
+  .btn-smaller {
+    width: 65%;
+  }
+  .theInp {
+    max-width: 65%;
+  }
+  .bigInput {
+    width: 65%;
+  }
+}
+/* Grids */
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* comments */
+h1.comments-title {
+  font-size: 1.5rem;
+  margin-top: 6rem;
+  text-align: center;
+  color: var(--h1Color);
+}
+
+.comment {
+  width: 100%;
+  position: relative;
+  margin: 1rem auto;
+  overflow-wrap: break-word;
+  background: var(--commentBg);
+  color: var(--comment);
+  font-size: 1.5rem;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* white-space: pre-wrap; */
+  transition: background 0.5s linear;
+}
+.commentDate {
+  position: absolute;
+  font-size: 0.6rem;
+  bottom: 0.5rem;
+  left: 0.7rem;
+}
+.boxShadow {
+  box-shadow: 0 10px 20px var(--boxShadow2), 0 6px 6px var(--boxShadow2);
+}
+.boxShadow:hover {
+  box-shadow: 0 5px 10px var(--boxShadow2), 0 3px 3px var(--boxShadow2);
+}
+@media screen and (min-width: 768px) {
+  .comment {
+    width: 70vw;
+    border-radius: 1rem 1rem 0 1rem;
+  }
+  h1.comments-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  cursor: auto;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scroll);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: var(--scrollBg);
+}
+@media screen and (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+    cursor: auto;
+  }
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  right: 1rem;
+  top: 1.5rem;
+  width: 60px;
+  height: 34px;
+}
+@media screen and (min-width: 768px) {
+  .switch {
+    right: 5rem;
+    top: 2rem;
+  }
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--sliderColor);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--sliderLightBg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--sliderDarkBg);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.hide {
+  display: none;
+  height: 0;
+}
+
+/*  */
+.homeBtn {
+  position: absolute;
+  left: 1rem;
+  top: 1.5rem;
+  background: #0000;
+  outline: none;
+  border: none;
+  background-image: url(../incognito.svg);
+  background-repeat: no-repeat;
+  height: 2.5rem;
+  width: 5rem;
+  padding: 0;
+  cursor: pointer;
+}
+.homeBtn:hover {
+  animation-name: incognito;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes incognito {
+  0% {
+    /* transform: rotateX(0deg); */
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .homeBtn {
+    left: 5rem;
+    top: 2rem;
+  }
+}
+
+.errorMessage {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+@media screen and (min-width: 768px) {
+  .errorMessage {
+    font-size: 1.5rem;
+    margin: 1rem auto;
+  }
+}
+
+.red {
+  background: var(--unapproved);
+  color: #fff;
+  transition-duration: 0.5s;
+  transition: background 0.5s linear;
+}
+
+.commentStatus {
+  position: absolute;
+  outline: none;
+  border: none;
+  background: #0000;
+  background-image: url("../images/x.svg");
+  top: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  /* transition-duration: 0.5s; */
+  /* transition: background 0.5s linear; */
+  cursor: pointer;
+}
+.commentStatusOk {
+  background-image: url("../images/check.svg");
+}
+.commentStatus:hover {
+  animation-name: incognito;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+}
+
+.response {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.7rem;
+  font-size: 0.8rem;
+  color: #2e9fd9;
+}
+.a-response {
+  color: #2e9fd9;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+.a-response:hover {
+  color: #2e9fd9;
+  transition-duration: 0.5s;
+  padding-right: 0.7rem;
+}
+
+.forward {
+  vertical-align: middle;
+  width: 0.7rem;
+}
+
+.tele {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-image: url("../images/telegram.svg");
+  left: 45vw;
+  top: 1.3rem;
+  background-color: #0000;
+  outline: none;
+  border: none;
+  background-repeat: no-repeat;
+  padding: 0;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.tele:hover {
+  transform: translateX(10px) translateY(-10px);
+  transition-duration: 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+  .tele {
+    left: 47vw;
+    top: 1.6rem;
+  }
+}
