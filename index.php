@@ -89,13 +89,13 @@ session_start(); ?>
 		<div id="preview" class="preview"></div>
 		<div class="grid grid--1x2">
 			<div class="btn-container">
-				<button class="btn btn-right boxShadow" onClick="showAdd()">ثبت پیام</button>
+				<button class="btn btn-right boxShadow" onClick="showAdd()">ثبت پیام جدید</button>
 			</div>
 			<div class="btn-container">
 				<button class="btn more btn-left boxShadow">پیام‌های دیگران</button>
 			</div>
 		</div>
-		<h1 id="errorMessage" class="errorMessage"></h1>
+		<h1 id="errorMessage" class="errorMessage hide">پیام شما دریافت شد.</h1>
 	</div>
 
 	<?php
@@ -120,6 +120,7 @@ session_start(); ?>
 			mysqli_stmt_bind_param($stmtAddComment, 'ss', $content, $theUrl);
 			mysqli_stmt_execute($stmtAddComment);
 			mysqli_stmt_close($stmtAddComment);
+			echo "<script>document.getElementById('errorMessage').classList.remove('hide')</script>";
 		}
 	}
 	?>

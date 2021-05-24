@@ -118,6 +118,7 @@ function hideAll() {
   document.getElementById("allComments").classList.add("hide");
   document.getElementById("addComment").classList.add("hide");
   document.getElementById("login").classList.add("hide");
+  document.getElementById("entry").classList.add("hide");
 }
 
 const ms = new Messenger(document.getElementById("preview"));
