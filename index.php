@@ -129,7 +129,7 @@ session_start(); ?>
 
 		<form action="" method="POST" id="addCommentForm">
 			<div class="btn-container">
-				<textarea class="textArea inp" name="content" id="formContent" cols="30" rows="10" maxlength="4000"></textarea>
+				<textarea class="textArea inp boxShadow" name="content" id="formContent" cols="30" rows="10" maxlength="4000"></textarea>
 			</div>
 
 			<div id="linkContainer" class="btn-container hide">
