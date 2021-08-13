@@ -23,7 +23,7 @@ body {
   --comment: var(--color);
   /*  */
   --boxShadow: rgba(63, 63, 63, 0.14);
-  --boxShadow2: rgba(69, 69, 69, 0.167);
+  --boxShadow2: rgb(0 0 0 / 17%);
   /*  */
   --scroll: var(--bg);
   --scrollBg: #61616188;
