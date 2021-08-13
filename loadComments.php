@@ -12,25 +12,25 @@ while ($row = mysqli_fetch_array($query)) {
 	$commentDate = $row['comment_date'];
 	$commentStatus = $row['comment_status'];
 	$commentUrl = $row['comment_url'];
+	$diff = abs(strtotime($nowDate) - strtotime($commentDate));
 
+	$years = floor($diff / (365 * 60 * 60 * 24));
+	$months = floor(($diff - $years * 365 * 60 * 60 * 24) / (30 * 60 * 60 * 24));
+	$days = floor(($diff - $years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 * 24) / (60 * 60 * 24));
+
+	$outDate = "";
+	if ($years) {
+		$outDate .= $years . " سال, ";
+	}
+	if ($months) {
+		$outDate .= $months . " ماه, ";
+	}
+	if ($days) {
+		$outDate .= $days . " روز ";
+	}
+	$outDate .= "پیش";
 	if (isset($_SESSION["userId"])) {
-		$diff = abs(strtotime($nowDate) - strtotime($commentDate));
-
-		$years = floor($diff / (365 * 60 * 60 * 24));
-		$months = floor(($diff - $years * 365 * 60 * 60 * 24) / (30 * 60 * 60 * 24));
-		$days = floor(($diff - $years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 * 24) / (60 * 60 * 24));
-
-		$outDate = "";
-		if ($years) {
-			$outDate .= $years . " سال, ";
-		}
-		if ($months) {
-			$outDate .= $months . " ماه, ";
-		}
-		if ($days) {
-			$outDate .= $days . " روز ";
-		}
-		$outDate .= "پیش";
+		
 ?>
 		<div id="com<?php echo $commentId; ?>" class="comment boxShadow <?php echo $commentStatus ? "" : "red" ?>"><?php echo $commentContent; ?>
 			<span class="commentDate"><?php echo !$years && !$months && !$days ? "امروز" : $outDate ?></span>
